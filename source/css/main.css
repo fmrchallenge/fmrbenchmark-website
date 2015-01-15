@@ -191,6 +191,13 @@ p {
     float: right;
 }
 
+#news a.button {
+    background: #8B0000;
+}
+#news a.button:hover {
+    background: #BB0000;
+}
+
 #banner {
     text-align: center;
     background: white;
