@@ -3,17 +3,14 @@ title: 1st Challenge on Formal Methods for Robotics
 use_mathjax: true
 ---
 
-<h1>The First Challenge on Formal Methods for Robotics</h1>
-
-<div id="banner">Coming soon!</div>
-
 <h2 id="contact">Contact</h2>
 <div class="author"><a href="http://scottman.net">Scott C. Livingston</a>  &lt;slivingston@<a href="http://www.cds.caltech.edu">cds</a> <a href="http://www.caltech.edu">caltech</a> edu&gt;</div>
 <div class="author"><a href="http://users.cms.caltech.edu/~vasu/">Vasumathi Raman</a>  &lt;vasu@<a href="http://www.caltech.edu">caltech</a> edu&gt;</div>
 
 <div id="news">
-<a class="twitter-timeline"  href="https://twitter.com/fmrchallenge" data-widget-id="514886908195790849">Tweets by @fmrchallenge</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<p><a href="http://eepurl.com/bbxEcz" class="button">subscribe to the mailing list</a></p>
+<p><a class="twitter-timeline"  href="https://twitter.com/fmrchallenge" data-widget-id="514886908195790849">Tweets by @fmrchallenge</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></p>
 </div>
 
 <h2 id="summary">Summary</h2>
@@ -42,10 +39,9 @@ cars, and manipulation tasks on the assembly line.</p>
 </ol>
 
 <div class="psetting" id="scalingcintegrators">
-<h3>scaling chains of integrators</h3>
+<h3><a href="scalingcintegrators.html">scaling chains of integrators</a></h3>
+<img src="img/dinteg_illustration.svg" alt="Illustration of a trajctory in 3-dimensional Euclidean space.  It avoids two gray rectangles (obstacles) and reaches a green goal rectangle."/>
 <p>
-
-<img src="img/dinteg_illustration.svg" width="275px" alt="Illustration of a trajctory in 3-dimensional Euclidean space.  It avoids two gray rectangles (obstacles) and reaches a green goal rectangle."/>
 The <em>scaling chains of integrators</em> domain is the simplest in terms of
 dynamics, yet unlike the other domains, the system to be controlled can be
 scaled easily to arbitrarily many dimensions.  While this problem is abstract in
@@ -55,33 +51,29 @@ well-motivated because the double-integrator is just the basic force equation
 problem domain concerns acceleration of a point-mass in high-dimensional spaces
 so as to visit goal regions and avoid obstacles.
 </p>
-<p><a href="scalingcintegrators.html">Get details.</a></p>
+<p><a href="scalingcintegrators.html" class="button">Get details</a></p>
 </div>
 
 <div class="psetting" id="dubinstraffic">
 <h3>Dubins traffic</h3>
+<img src="img/dtraff_illustration.png" alt="Illustration of 6 Kobuki mobile bases moving around the end of a wall." />
 <p>
-
-<img src="img/dtraff_illustration.png" width="275px" alt="Illustration of 6 Kobuki mobile bases moving around the end of a wall." />
 The <em>Dubins traffic</em> domain involves navigation in a small network of
 two-lane roads with vehicles that have Dubins car dynamics.  There is an
 adversary that selects the motion of other cars.  The adversary is subject to
 assumptions such as obeying traffic rules and not parking unfairly at locations
 that must be eventually reached by the controller.
-
 </p>
 </div>
 
 <div class="psetting" id="pickandplace">
 <h3>pick-and-place</h3>
+<img src="img/pandp_illustration.png" alt="Illustration of a Baxter robot next to an empty table.  The arms are hanging downward and not in motion." />
 <p>
-
-<img src="img/pandp_illustration.png" width="275px" alt="Illustration of a Baxter robot next to an empty table.  The arms are hanging downward and not in motion." />
 The <em>pick-and-place</em> domain concerns dexterous manipulation tasks
 motivated by assembly line activities.  The difficulties present in this problem
 domain will include uncertainty in the shape and dynamics of the end-effector,
 as well as objects that are being grasped, and collision-avoidance with moving
 obstacles that come into the workspace.
-
 </p>
 </div>
