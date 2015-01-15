@@ -213,6 +213,8 @@ h2.pdomain, h3.pdomain {
     text-align: center;
     border-top: 10px solid #000;
 }
+#footer a:hover { text-decoration: none; }
+a.caltechlink { color: #FF6E1E; font-weight: bold; }
 
 
 /* ==========================================================================
