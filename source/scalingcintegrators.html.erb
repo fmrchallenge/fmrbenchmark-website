@@ -3,35 +3,60 @@ title: scaling chains of integrators -- 1st Challenge on Formal Methods for Robo
 use_mathjax: true
 ---
 
-<div id="banner">Details are subject to change!</div>
+<div id="banner">More details are coming soon!</div>
 
 <h2 class="pdomain">scaling chains of integrators</h2>
+
+<!-- LaTeX header -->
+\( \DeclareMathOperator{\Feventually}{\Diamond} \DeclareMathOperator{\Galways}{\Box} \DeclareMathOperator{\Uuntil}{\mathbf{U}} \)
+
 <p>
 <div class="pillustration"><img src="img/dinteg_illustration.svg" width="400px" alt="Illustration of a trajctory in 3-dimensional Euclidean space.  It avoids two gray rectangles (obstacles) and reaches a green goal rectangle."/></div>
 
-\( \DeclareMathOperator{\Feventually}{\Diamond} \DeclareMathOperator{\Galways}{\Box} \DeclareMathOperator{\Uuntil}{\mathbf{U}} \)
-
-The <em>scaling double integrators</em> domain is the simplest in terms of
-dynamics, yet unlike the other domains, the system to be controlled can be
-scaled easily to arbitrarily many dimensions.  While this problem is abstract in
-the sense that it is not modeling a specific physical system, it is
-well-motivated because the double-integrator is just the basic force equation
-\( F=ma \) of Newtonian mechanics, up to a scaling factor.  In other words, this
-problem domain concerns acceleration of a point-mass in high-dimensional spaces
-so as to visit goal regions and avoid obstacles.
+The <em>scaling chains of integrators</em> domain is the simplest in terms of
+dynamics and specifications, yet unlike the other domains, the system to be
+controlled can be scaled easily to arbitrarily many dimensions.  While this
+problem is abstract in the sense that it is not modeling a specific physical
+system, it is well-motivated because the double-integrator is just the basic
+force equation \( F=ma \) of Newtonian mechanics, up to a scaling factor.
+Informally, this problem domain concerns controlling acceleration or a higher
+order derivative of a point-mass in high-dimensional spaces so as to visit goal
+regions and avoid obstacles.
 </p>
 
 <h3 class="pdomain">Dynamics and constraints</h3>
 <p>
-Let \( n \) be a positive integer.
+Let \( n \) and \( m \) be positive integers.  Consider the differential equation
 \begin{equation}
-\ddot{q} = u ,
-\label{eq:doubleinteg}
+D^{m}q = u ,\label{eq:minteg}
 \end{equation}
-where \( q(t)\in \mathbb{R}^{n} \) and \( \dot{q}(t) \) are called the <em>position</em>
-and <em>velocity</em>, respectively, at time \( t \).  The input is bounded as
-\( \lVert u(t) \rVert_1 \leq u_{\mathrm{max}} \).  To introduce process and sensor
-noise, consider the 2-dimensional system
+where \( q: [0,\infty [ \rightarrow \mathbb{R}^{n} \) and \( D \) is the differential
+operator.  The input \( u \) is bounded as \( \lVert u(t) \rVert_1 \leq
+u_{\mathrm{max}} \).  The system is called a <em>chain of a integrators</em>
+because it can be rewritten as a linear control system
+\begin{equation}
+\begin{split}
+\dot{x}_1 &= x_2 \\
+\dot{x}_2 &= x_3 \\
+&\vdots \\
+\dot{x}_{m-1} &= x_m \\
+\dot{x}_m &= u \\
+y &= x_1
+\end{split}\label{eq:cintegdyn}
+\end{equation}
+where for time \( t \), each \( x_{i}(t)\in \mathbb{R}^n \) for \( i=1,\ldots,m \), and
+\( x(t)=\left( x_{1}(t) , \ldots , x_{m}(t)\right)\in \mathbb{R}^{nm} \). The output
+trajectories of \eqref{eq:cintegdyn} are exactly those of \eqref{eq:minteg},
+given the same input, and thus we call them equivalent. In \eqref{eq:minteg},
+control input is applied as the \( m \)-th derivative of an \( n \)-dimensional variable
+\( q \), and the intermediate derivatives are made explicit in
+\eqref{eq:cintegdyn}. A notable particular case is \( m=2 \), which is called the
+"double integrator". If \( n \leq 3 \) then \( q \) may be referred to as the
+"position".
+</p>
+
+<p>
+To introduce process and sensor noise, consider the 2-dimensional system
 \begin{align}
 \dot{x} &= \left(
 \begin{array}{cc}
@@ -51,16 +76,11 @@ y &= \left(
 \right) x + \eta \label{eq:dintegobs},
 \end{align}
 where \( \xi \) and \( \eta \) are either bounded disturbances (nondeterministic) or
-stochastic processes.  Equivalence with \eqref{eq:doubleinteg} in the case of
-\( n=1 \) and \( \xi=\eta=0 \) is apparent using \( x_1 = q \) and \( x_2 = \dot{q} \).  For \( n
+stochastic processes.  Equivalence with \eqref{eq:minteg} in the case of
+\( n=1, m=2 \) and \( \xi=\eta=0 \) is apparent using \( x_1 = q \) and \( x_2 = \dot{q} \).  For \( n
 > 1 \), the matrices in \eqref{eq:dintegdyn} and \eqref{eq:dintegobs} can be
 repeated in block diagonal form to yield a new linear time-invariant system of
-dimension \( 2n \) and which is again equivalent to \eqref{eq:doubleinteg}.
-
-For this aspect of the ``scaling double-integrators'' problem domain, we are
-able to vary the number of position dimensions \( n \), the maximum 1-norm of the
-control input \( u_{\mathrm{max}} \), and the process and sensor noise \( \xi \) and
-\( \eta \).
+dimension \( 2n \) and which is again equivalent to \eqref{eq:minteg} for \( m=2 \).
 </p>
 
 <h3 class="pdomain">Specifications</h3>
