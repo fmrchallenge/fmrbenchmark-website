@@ -28,14 +28,14 @@ research, demonstrations of formal methods have been surprisingly small-scale.
 The proposed robotics challenge seeks to motivate advancement of the state of
 the art toward practical realization.  The challenge is organized into three
 problem domains: arbitrary dimensional chains of integrators, roads with Dubins
-cars, and manipulation tasks on the assembly line.</p>
+cars, and factory cart clearing.</p>
 
 <h2 id="problems">Problem Domains</h2>
 
 <ol>
   <li><a href="#scalingcintegrators">scaling chains of integrators</a></li>
-  <li><a href="#dubinstraffic">Dubins traffic</a></li>
-  <li><a href="#pickandplace">pick-and-place</a></li>
+  <li><a href="#dubinstraffic">traffic network of Dubins cars</a></li>
+  <li><a href="#cartclearing">factory cart clearing</a></li>
 </ol>
 
 <div class="psetting" id="scalingcintegrators">
@@ -56,10 +56,10 @@ obstacles.
 </div>
 
 <div class="psetting" id="dubinstraffic">
-<h3>Dubins traffic</h3>
+<h3>traffic network of Dubins cars</h3>
 <img src="img/dtraff_illustration.png" alt="Illustration of 6 Kobuki mobile bases moving around the end of a wall." />
 <p>
-The <em>Dubins traffic</em> domain involves navigation in a small network of
+The <em>traffic network of Dubins cars</em> domain involves navigation in a small network of
 two-lane roads with vehicles that have Dubins car dynamics.  There is an
 adversary that selects the motion of other cars.  The adversary is subject to
 assumptions such as obeying traffic rules and not parking unfairly at locations
@@ -67,14 +67,15 @@ that must be eventually reached by the controller.
 </p>
 </div>
 
-<div class="psetting" id="pickandplace">
-<h3>pick-and-place</h3>
+<div class="psetting" id="cartclearing">
+<h3>factory cart clearing</h3>
 <img src="img/pandp_illustration.png" alt="Illustration of a Baxter robot next to an empty table.  The arms are hanging downward and not in motion." />
 <p>
-The <em>pick-and-place</em> domain concerns dexterous manipulation tasks
-motivated by assembly line activities.  The difficulties present in this problem
-domain will include uncertainty in the shape and dynamics of the end-effector,
-as well as objects that are being grasped, and collision-avoidance with moving
-obstacles that come into the workspace.
+The <em>factory cart clearing</em> domain concerns dexterous manipulation tasks
+motivated by assembly line activities.  The robot is required to process objects
+laid out on a cart that is brought to it and sort them into bins. Carts arrive
+after the robot indicates that it is ready, and carts are removed once a robot
+declares that it is done. Scoring will be based on how many carts can be
+processed correctly (described below) in a fixed amount of time.
 </p>
 </div>
