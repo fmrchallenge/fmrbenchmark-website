@@ -11,3 +11,4 @@
 # Other temporary files
 .DS_Store
 *~
+Gemfile.lock
