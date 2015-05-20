@@ -158,7 +158,7 @@ a.button:hover {
 
 p {
     max-width: 60em;
-    font-size: 12pt;
+    font-size: 14pt;
 }
 
 .psetting {
@@ -184,7 +184,7 @@ p {
 }
 
 .psetting p {
-    font-size: 12pt;
+    font-size: 14pt;
 }
 
 .psetting em {
@@ -227,6 +227,13 @@ h2.pdomain, h3.pdomain {
     width: 100%;
     text-align: center;
     border-top: 10px solid #000;
+}
+#footer p {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 0.8em;
 }
 #footer a:hover { text-decoration: none; }
 a.caltechlink { color: #FF6E1E; font-weight: bold; }
