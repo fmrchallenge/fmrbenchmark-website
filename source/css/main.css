@@ -195,6 +195,17 @@ table.agenda { margin: 1em; border-bottom: 1px solid #000; }
 .agenda td { padding: 0.5em; max-width: 30em; }
 .agenda tr { border-top: 1px solid #000; }
 
+li.agenda {
+    padding-bottom: 1.5em;
+}
+
+blockquote.agenda {
+    max-width: 40em;
+    background: #EEE;
+    padding: 1em;
+    margin: 0;
+}
+
 #news {
     float: right;
 }
