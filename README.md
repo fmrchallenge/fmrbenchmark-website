@@ -1,7 +1,7 @@
 Source code for the website of the fmrbenchmark project
 =======================================================
 
-http://www.fmrchallenge.org
+http://fmrchallenge.org
 
 The site is built using [Middleman](https://middlemanapp.com/) and is based on
 the [HTML5 Boilerplate](http://html5boilerplate.com) template.
