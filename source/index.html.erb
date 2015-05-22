@@ -37,15 +37,21 @@ cars, and factory cart clearing.</p>
 </ul></p>
 
 <h2 id="problems">Problem Domains</h2>
-
+<p>Below is a summary of <em>problem domains</em>, each of which is the basis
+for particular <em>problem instances</em>. With such a taxonomy, we are able to
+provide parameterized benchmarks that can be arbitrarily scaled, randomly
+generated, etc. Of course, there is also support for fixed benchmarks, e.g., as
+proposed from specific industrial applications. Normative
+descriptions are given at <a href="/norm/"><tt>fmrchallenge.org/norm</tt></a>.
 <ol>
-  <li><a href="#scalingcintegrators">scaling chains of integrators</a></li>
-  <li><a href="#dubinstraffic">traffic network of Dubins cars</a></li>
-  <li><a href="#cartclearing">factory cart clearing</a></li>
+  <li><a href="#integrator_chains">scaling chains of integrators</a></li>
+  <li><a href="#dubins_traffic">traffic network of Dubins cars</a></li>
+  <li><a href="#cart_clearing">factory cart clearing</a></li>
 </ol>
+</p>
 
-<div class="psetting" id="scalingcintegrators">
-<h3><a href="scalingcintegrators.html">scaling chains of integrators</a></h3>
+<div class="psetting" id="integrator_chains">
+<h3><a href="integrator_chains.html">scaling chains of integrators</a></h3>
 <img src="img/dinteg_illustration.svg" alt="Illustration of a trajctory in 3-dimensional Euclidean space.  It avoids two gray rectangles (obstacles) and reaches a green goal rectangle."/>
 <p>
 The <em>scaling chains of integrators</em> domain is the simplest in terms of
@@ -58,10 +64,10 @@ problem domain concerns controlling acceleration or a higher order derivative of
 a point-mass in high-dimensional spaces so as to visit goal regions and avoid
 obstacles.
 </p>
-<p><a href="scalingcintegrators.html" class="button">Get details</a></p>
+<p><a href="integrator_chains.html" class="button">Get details</a></p>
 </div>
 
-<div class="psetting" id="dubinstraffic">
+<div class="psetting" id="dubins_traffic">
 <h3>traffic network of Dubins cars</h3>
 <img src="img/dtraff_illustration.png" alt="Illustration of 6 Kobuki mobile bases moving around the end of a wall." />
 <p>
@@ -73,7 +79,7 @@ that must be eventually reached by the controller.
 </p>
 </div>
 
-<div class="psetting" id="cartclearing">
+<div class="psetting" id="cart_clearing">
 <h3>factory cart clearing</h3>
 <img src="img/pandp_illustration.png" alt="Illustration of a Baxter robot next to an empty table.  The arms are hanging downward and not in motion." />
 <p>
