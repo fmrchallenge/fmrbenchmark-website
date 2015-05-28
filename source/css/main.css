@@ -206,6 +206,14 @@ blockquote.agenda {
     margin: 0;
 }
 
+a.importantlink {
+    font-weight: bold;
+}
+
+p.disclaimer {
+    font-size: 0.7em;
+}
+
 #news {
     float: right;
 }
