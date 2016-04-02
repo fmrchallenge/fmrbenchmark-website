@@ -6,6 +6,22 @@ http://fmrchallenge.org
 The site is built using [Middleman](https://middlemanapp.com/) and is based on
 the [HTML5 Boilerplate](http://html5boilerplate.com) template.
 
+Preparations, building, testing
+-------------------------------
+
+If you do not already have them, install [Ruby](http://www.ruby-lang.org) and
+[bundle](http://gembundler.com). Then, from the root of this source tree,
+
+    bundle install
+    bundle exec middleman build
+
+to build the site. Contents of the output directory build/ can be copied
+directly onto the server for deployment.
+
+Use `middleman server` for local testing. It updates the output automatically
+when source files change. Beware that the default configuration may allow other
+hosts on your local network to view the site.
+
 
 Organization
 ------------
