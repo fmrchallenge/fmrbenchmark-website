@@ -15,6 +15,22 @@ the teams will be run can be found in
 the <a href="http://docs.fmrchallenge.org">User's Guide</a>.
 </p></li>
 
+<li><p class="question">What should submissions look like?</p>
+<p class="answer">
+This is a <em>controller</em> challenge, meaning that given an instance of a
+problem in a specified format, each team will submit a controller that provides
+a solution using an appropriate interface. Concretely, the interface is defined
+using ROS topics and services. Currently the only method of evaluation is
+through Monte Carlo (randomized, finite duration) trials. As such, controllers
+themselves are largely opaque entities. An example is provided
+in <a href="https://github.com/fmrchallenge/fmrbenchmark/blob/8311295c68c827f083a7b4575851fb12b2eaea63/examples/sci_concrete_examples/scripts/lqr.py">examples/sci_concrete_examples/scripts/lqr.py</a>.
+We are happy to help troubleshoot any compatibility issues with submitted
+controller software. Though not planned for the first challenge, we are
+considering other messaging-based interfaces, e.g., using LCM, as well as
+solutions of particular forms, e.g., involving Mealy machines and discrete
+abstractions.
+</p></li>
+
 <li><p class="question">How will submissions be evaluated?</p>
 <p class="answer">
 Currently the only available evaluation is entirely based on Monte Carlo trials,
