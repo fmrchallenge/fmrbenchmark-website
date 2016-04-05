@@ -14,6 +14,19 @@ released for some time now, and an example of how controller code provided by
 the teams will be run can be found in
 the <a href="http://docs.fmrchallenge.org">User's Guide</a>.
 </p></li>
+
+<li><p class="question">How will submissions be evaluated?</p>
+<p class="answer">
+Currently the only available evaluation is entirely based on Monte Carlo trials,
+where scoring is obtained from satisfaction of the task specification and
+performance metrics. The duration for each trial is provided as part of the
+problem instance in some cases, and it is randomly generated in others. This
+statistical approach to evaluation has well-known limitations in deciding
+correctness of solutions. However, it permits a great variety of possible
+controllers because essentially no internal structure of solutions is assumed.
+We are considering other methods of evaluation that require certain forms of
+solutions and allow correspondingly stronger assertions.
+</p></li>
 </ol>
 
 <p>
