@@ -9,6 +9,7 @@ use_mathjax: false
 <div id="toc">
   <a href="#callICRA2016" class="button">call for participation</a>
   <a href="#schedule" class="button">schedule</a>
+  <a href="#instructions" class="button">instructions for submissions</a>
   <a href="http://fmrchallenge.org" class="button">fmrchallenge home</a>
   <a href="#contact" class="button">contact</a>
   <a href="http://eepurl.com/bbxEcz" class="button">mailing list</a>
@@ -47,6 +48,24 @@ The Challenge will take place during the month of May 2016.
   <li><strong>11 May:</strong> <em>first round</em> of official competition trials for integrator_chains and the simulation variant of dubins_traffic</li>
   <li><strong>16-19 May:</strong> <em>second round</em> of official competition trials for integrator_chains and the simulation variant of dubins_traffic, and the official competition for the physical variant of dubins_traffic (at ICRA in Stockholm, Sweden)</li>
 </ul>
+</p>
+
+<h2 id="instructions">instructions for submissions</h2>
+<p>
+The following are instructions for submitting controllers for the <em>first round</em> of trials. <strong>The deadline for submissions is May 11 AoE</strong>.
+</p>
+
+<p>
+Please send, by email to the organizers (contact information below) a tarball that contains all relevant code, and a shell script named <em>install.sh</em>, to be used as follows. You may also send instead a URL for the tarball file. Please include a SHA256 checksum and/or detached signature of the submission files.
+
+<ol>
+  <li> the tarball (tar.gz, bz2, xz, zip) will be expanded after the signature/checksum is checked;
+
+  <li> <em>install.sh</em> is run; this should install all dependencies needed by your controller including building any source code, and should be tested on Ubuntu 14.04. Please include a README with comments in case this step fails. Please also include in the README a reference to the commit of the fmrbenchmark repository at which your code has been tested.
+</ol>
+
+<p>
+  The details of how trials will be run are available in the Users' Guide tutorials and the normative document.
 </p>
 
 <h2 id="contact">organizers</h2>
