@@ -9,6 +9,9 @@ the [HTML5 Boilerplate](http://html5boilerplate.com) template.
 Preparations, building, testing
 -------------------------------
 
+The repository uses [Git LFS](https://git-lfs.github.com), which is required to
+checkout some of the large files that are used in the website.
+
 If you do not already have them, install [Ruby](http://www.ruby-lang.org) and
 [bundle](http://gembundler.com). Then, from the root of this source tree,
 
