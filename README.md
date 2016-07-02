@@ -9,6 +9,8 @@ the [HTML5 Boilerplate](http://html5boilerplate.com) template.
 Preparations, building, testing
 -------------------------------
 
+The source code and issue tracker are available at
+https://github.com/fmrchallenge/fmrbenchmark-website/
 The repository uses [Git LFS](https://git-lfs.github.com), which is required to
 checkout some of the large files that are used in the website.
 
