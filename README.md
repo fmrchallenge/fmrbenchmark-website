@@ -45,6 +45,6 @@ LICENSE-Middleman.md and LICENSE-html5boilerplate.md. They are both the standard
 
 Anything that is original site content, and thus not covered by the
 aforementioned copyrights, is released under the Creative Commons
-Attribution-ShareAlike 4.0 International License. To get a copy of this license,
-visit http://creativecommons.org/licenses/by-sa/4.0/ or send a letter to
+Attribution 4.0 International License. To get a copy of this license,
+visit http://creativecommons.org/licenses/by/4.0/ or send a letter to
 Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
