@@ -216,7 +216,11 @@ p.disclaimer {
 }
 
 #news {
-    float: right;
+    font-size: 14pt;
+    text-align: left;
+    font-family: monospace;
+    padding-top: 0.5em;
+    margin: .6em;
 }
 
 #news a.button {
