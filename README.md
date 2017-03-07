@@ -28,6 +28,13 @@ when source files change. Beware that the default configuration may allow other
 hosts on your local network to view the site.
 
 
+Deploying
+---------
+
+After building as described in the previous section, use `deploy.sh`. The script
+must be provided a host and path as would be used with `rsync`.
+
+
 Organization
 ------------
 
