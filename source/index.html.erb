@@ -1,40 +1,52 @@
 ---
-title: Benchmarks and Competitions on Formal Methods for Robotics
+title: Benchmarks on Formal Methods for Robotics
 use_mathjax: true
 ---
 
-<h2 id="contact">Contact</h2>
-<div class="author"><a href="http://scottman.net">Scott C. Livingston</a>  &lt;slivingston@A&gt;, where A&nbsp;=&nbsp;<a href="http://www.cds.caltech.edu">cds</a>.<a href="http://www.caltech.edu">caltech</a>.edu</div>
-<div class="author"><a href="http://vraman.github.io">Vasumathi Raman</a>  &lt;vasumathi.raman@B&gt;, where B&nbsp;=&nbsp;gmail.com</div>
-<div id="news">
-  <a href="http://eepurl.com/bbxEcz">subscribe to the mailing list</a>,
-  or follow <a href="https://twitter.com/fmrchallenge">@fmrchallenge on Twitter</a>
+<div class="jumbotron">
+  <div class="container">
+  <h1>Benchmarks and Competitions on Formal Methods for Robotics</h1>
+  <p></p>
+  </div>
 </div>
 
+<div class="container">
+  <div class="row" id="contact">
+    <h2>Contact</h2>
+    <div class="author"><a href="http://scottman.net">Scott C. Livingston</a>  &lt;slivingston@A&gt;, where A&nbsp;=&nbsp;<a href="http://www.cds.caltech.edu">cds</a>.<a href="http://www.caltech.edu">caltech</a>.edu</div>
+    <div class="author"><a href="http://vraman.github.io">Vasumathi Raman</a>  &lt;vasumathi.raman@B&gt;, where B&nbsp;=&nbsp;gmail.com</div>
+    <div id="news">
+      <a href="http://eepurl.com/bbxEcz">subscribe to the mailing list</a>,
+      or follow <a href="https://twitter.com/fmrchallenge">@fmrchallenge on Twitter</a>
+    </div>
+  </div>
+  <div class="row" id="events">
+    <h2>Events</h2>
+    <p><ul>
+      <li><a href="events/challenge-icra2016.html" class="importantlink">challenge at ICRA 2016</a></li>
+      <li><a href="events/workshop-icra2015.html">workshop at ICRA 2015</a></li>
+    </ul></p>
+  </div>
+  <div class="row">
+    <h2 id="problems">Problem Domains</h2>
+    <p>Below is a summary of <em>problem domains</em>, each of which is the basis
+    for particular <em>problem instances</em>. With such a taxonomy, we are able to
+    provide parameterized benchmarks that can be arbitrarily scaled, randomly
+    generated, etc. Of course, there is also support for fixed benchmarks, e.g., as
+    proposed from specific industrial applications. Normative
+    descriptions are given at <a href="/norm/"><tt>fmrchallenge.org/norm</tt></a>.
+    <ol>
+      <li><a href="#integrator_chains">scaling chains of integrators</a></li>
+      <li><a href="#dubins_traffic">traffic network of Dubins cars</a></li>
+      <li><a href="#cart_clearing">factory cart clearing</a></li>
+    </ol>
+    </p>
+  </div>
+  <div class="row">
 
-<h2 id="events">Events</h2>
-<p><ul>
-    <li><a href="events/challenge-icra2016.html" class="importantlink">challenge at ICRA 2016</a></li>
-    <li><a href="events/workshop-icra2015.html">workshop at ICRA 2015</a></li>
-</ul></p>
-
-<h2 id="problems">Problem Domains</h2>
-<p>Below is a summary of <em>problem domains</em>, each of which is the basis
-for particular <em>problem instances</em>. With such a taxonomy, we are able to
-provide parameterized benchmarks that can be arbitrarily scaled, randomly
-generated, etc. Of course, there is also support for fixed benchmarks, e.g., as
-proposed from specific industrial applications. Normative
-descriptions are given at <a href="/norm/"><tt>fmrchallenge.org/norm</tt></a>.
-<ol>
-  <li><a href="#integrator_chains">scaling chains of integrators</a></li>
-  <li><a href="#dubins_traffic">traffic network of Dubins cars</a></li>
-  <li><a href="#cart_clearing">factory cart clearing</a></li>
-</ol>
-</p>
-
-<div class="psetting" id="integrator_chains">
-<h3><a href="integrator_chains.html">scaling chains of integrators</a></h3>
-<img src="img/dinteg_illustration.svg" alt="Illustration of a trajctory in 3-dimensional Euclidean space.  It avoids two gray rectangles (obstacles) and reaches a green goal rectangle."/>
+<div class="col-md-4" id="integrator_chains">
+<h3>scaling chains of integrators</h3>
+<img width="90%" src="img/dinteg_illustration.svg" alt="Illustration of a trajctory in 3-dimensional Euclidean space.  It avoids two gray rectangles (obstacles) and reaches a green goal rectangle."/>
 <p>
 The <em>scaling chains of integrators</em> domain is the simplest in terms of
 dynamics, yet unlike the other domains, the system to be controlled can be
@@ -46,12 +58,12 @@ problem domain concerns controlling acceleration or a higher order derivative of
 a point-mass in high-dimensional spaces so as to visit goal regions and avoid
 obstacles.
 </p>
-<p><a href="integrator_chains.html" class="button">Get details</a></p>
+<p><a class="btn btn-primary btn-lg" href="integrator_chains.html" role="button">Get details &raquo;</a></p>
 </div>
 
-<div class="psetting" id="dubins_traffic">
+<div class="col-md-4" id="dubins_traffic">
 <h3>traffic network of Dubins cars</h3>
-<img src="img/dtraff_illustration.jpg" alt="Illustration of 6 Kobuki mobile bases moving around a 4-connected grid of road segments. The width is 3 road segments, and the height is 2 road segments. Each has two lanes, where there is one lane for each direction of traffic." />
+<img width="90%" src="img/dtraff_illustration.jpg" alt="Illustration of 6 Kobuki mobile bases moving around a 4-connected grid of road segments. The width is 3 road segments, and the height is 2 road segments. Each has two lanes, where there is one lane for each direction of traffic." />
 <p>
 The <em>traffic network of Dubins cars</em> domain involves navigation in a small network of
 two-lane roads with vehicles that have Dubins car dynamics.  There is an
@@ -61,9 +73,9 @@ that must be eventually reached by the controller.
 </p>
 </div>
 
-<div class="psetting" id="cart_clearing">
+<div class="col-md-4" id="cart_clearing">
 <h3>factory cart clearing</h3>
-<img src="img/pandp_illustration.png" alt="Illustration of a Baxter robot next to an empty table.  The arms are hanging downward and not in motion." />
+<img width="90%" src="img/pandp_illustration.png" alt="Illustration of a Baxter robot next to an empty table.  The arms are hanging downward and not in motion." />
 <p>
 The <em>factory cart clearing</em> domain concerns dexterous manipulation tasks
 motivated by assembly line activities.  The robot is required to process objects
@@ -72,4 +84,6 @@ after the robot indicates that it is ready, and carts are removed once a robot
 declares that it is done. Scoring will be based on how many carts can be
 processed correctly (described below) in a fixed amount of time.
 </p>
+</div>
+</div>
 </div>
