@@ -45,10 +45,11 @@ Organization
 Licenses
 --------
 
-Some of the source code for the site originates from the Middleman and HTML5
-Boilerplate projects. Copies of their respective licenses are included as
-LICENSE-Middleman.md and LICENSE-html5boilerplate.md. They are both the standard
-[MIT License](http://opensource.org/licenses/MIT).
+Some of the source code for the site originates from the Middleman, HTML5
+Boilerplate, and Bootstrap projects. Copies of their respective licenses are
+included as LICENSE-Middleman.md, LICENSE-html5boilerplate.md, and
+LICENSE-Bootstrap. They are all the standard [MIT License](
+http://opensource.org/licenses/MIT).
 
 Anything that is original site content, and thus not covered by the
 aforementioned copyrights, is released under the Creative Commons
