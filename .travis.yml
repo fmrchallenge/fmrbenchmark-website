@@ -1,0 +1,15 @@
+sudo: false
+
+os:
+  - linux
+
+language: ruby
+
+install:
+  - bundle install
+
+script:
+  - bundle exec middleman build
+
+notifications:
+  email: false
