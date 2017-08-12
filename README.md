@@ -27,6 +27,10 @@ Use `middleman server` for local testing. It updates the output automatically
 when source files change. Beware that the default configuration may allow other
 hosts on your local network to view the site.
 
+We use Travis CI and [Sauce Labs](https://saucelabs.com/open-source) to build
+and test the site from the current source code in the repository.
+[![Build status](https://api.travis-ci.org/fmrchallenge/fmrbenchmark-website.svg?branch=master)](https://travis-ci.org/fmrchallenge/fmrbenchmark-website)
+
 
 Deploying
 ---------
