@@ -4,71 +4,100 @@ skip_header: true
 use_mathjax: false
 ---
 
-<h1>The First Challenge on Formal Methods for Robotics: <span class="subtitle">ICRA 2016<span></h1>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+<div class="container-fluid">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="https://fmrchallenge.org" class="button">Benchmarks on FMR</a>
+  </div>
+  <div id="navbar" class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+      <li><a href="#callICRA2016" class="button">call for participation</a></li>
+      <li><a href="#schedule" class="button">schedule</a></li>
+      <li><a href="#instructions" class="button">instructions for submissions</a></li>
+      <li><a href="https://fmrchallenge.org" class="button">fmrchallenge home</a></li>
+      <li><a href="#contact" class="button">contact</a></li>
+      <li><a href="http://eepurl.com/bbxEcz" class="button">mailing list</a></li>
+    </ul>
+  </div>
+</div>
+</nav>
 
-<div id="toc">
-  <a href="#callICRA2016" class="button">call for participation</a>
-  <a href="#schedule" class="button">schedule</a>
-  <a href="#instructions" class="button">instructions for submissions</a>
-  <a href="https://fmrchallenge.org" class="button">fmrchallenge home</a>
-  <a href="#contact" class="button">contact</a>
-  <a href="http://eepurl.com/bbxEcz" class="button">mailing list</a>
+<div class="jumbotron">
+  <div class="container">
+  <h1>The First Challenge on Formal Methods for Robotics: <span class="subtitle">ICRA 2016<span></h1>
+  </div>
 </div>
 
-<h2 id="callICRA2016">call for participation</h2>
-<p>
-We invite teams to participate in the first challenge on formal methods for
-robotics, to be held at <a href="http://www.icra2016.org">ICRA 2016</a> as a
-<a href="http://www.icra2016.org/conference/challenges/">Robot Challenge</a>.
-Compared to other areas within robotics research,
-demonstrations of formal methods have been surprisingly small-scale. The
-proposed robotics challenge seeks to motivate advancement of the state of the
-art toward practical realization. The challenge is organized into three problem
-domains: arbitrary dimensional chains of integrators, roads with Dubins cars,
-and factory cart clearing. Each team may enter any number of control programs,
-each of which may be used on any subset of the problem domains. Results of the
-challenge will be organized by problem domains, and control programs will be
-scored based on performance within each domain as well as across domains when
-more than one is attempted by the same controller.  Preparation materials
-including reference implementations and further details about scoring and
-logistics will be released in the upcoming months. Interested teams are directed
-to the challenge website
-at <a href="https://fmrchallenge.org">https://fmrchallenge.org</a>, which includes
-directions for subscription to the challenge mailing list.
-</p>
+<div class="container">
+  <div class="row" id="callICRA2016">
+    <h2>call for participation</h2>
+    <p>
+    We invite teams to participate in the first challenge on formal methods for
+    robotics, to be held at <a href="http://www.icra2016.org">ICRA 2016</a> as a
+    <a href="http://www.icra2016.org/conference/challenges/">Robot Challenge</a>.
+    Compared to other areas within robotics research,
+    demonstrations of formal methods have been surprisingly small-scale. The
+    proposed robotics challenge seeks to motivate advancement of the state of the
+    art toward practical realization. The challenge is organized into three problem
+    domains: arbitrary dimensional chains of integrators, roads with Dubins cars,
+    and factory cart clearing. Each team may enter any number of control programs,
+    each of which may be used on any subset of the problem domains. Results of the
+    challenge will be organized by problem domains, and control programs will be
+    scored based on performance within each domain as well as across domains when
+    more than one is attempted by the same controller.  Preparation materials
+    including reference implementations and further details about scoring and
+    logistics will be released in the upcoming months. Interested teams are directed
+    to the challenge website
+    at <a href="https://fmrchallenge.org">https://fmrchallenge.org</a>, which includes
+    directions for subscription to the challenge mailing list.
+    </p>
+  </div>
 
-<h2 id="schedule">competition schedule</h2>
-<p>
-The Challenge will take place during the month of May 2016.
-<em>Please beware that this schedule may change</em> as we finalize details.
-</p>
-<p>
-<ul>
-  <li><strong>1 May:</strong> <em>dry-run</em> trials for integrator_chains and the simulation variant of dubins_traffic</li>
-  <li><strong>11 May:</strong> <em>first round</em> of official competition trials for integrator_chains and the simulation variant of dubins_traffic</li>
-  <li><strong>16-19 May:</strong> <em>second round</em> of official competition trials for integrator_chains and the simulation variant of dubins_traffic, and the official competition for the physical variant of dubins_traffic (at ICRA in Stockholm, Sweden)</li>
-</ul>
-</p>
+  <div class="row" id="schedule">
+    <h2>competition schedule</h2>
+    <p>
+    The Challenge will take place during the month of May 2016.
+    <em>Please beware that this schedule may change</em> as we finalize details.
+    </p>
+    <p>
+    <ul>
+      <li><strong>1 May:</strong> <em>dry-run</em> trials for integrator_chains and the simulation variant of dubins_traffic</li>
+      <li><strong>11 May:</strong> <em>first round</em> of official competition trials for integrator_chains and the simulation variant of dubins_traffic</li>
+      <li><strong>16-19 May:</strong> <em>second round</em> of official competition trials for integrator_chains and the simulation variant of dubins_traffic, and the official competition for the physical variant of dubins_traffic (at ICRA in Stockholm, Sweden)</li>
+    </ul>
+    </p>
+  </div>
 
-<h2 id="instructions">instructions for submissions</h2>
-<p>
-The following are instructions for submitting controllers for the <em>first round</em> of trials. <strong>The deadline for submissions is May 11 AoE</strong>.
-</p>
+  <div class="row" id="instructions">
+    <h2>instructions for submissions</h2>
+    <p>
+    The following are instructions for submitting controllers for the <em>first round</em> of trials. <strong>The deadline for submissions is May 11 AoE</strong>.
+    </p>
 
-<p>
-Please send, by email to the organizers (contact information below) a tarball that contains all relevant code, and a shell script named <em>install.sh</em>, to be used as follows. You may also send instead a URL for the tarball file. Please include a SHA256 checksum and/or detached signature of the submission files.
+    <p>
+    Please send, by email to the organizers (contact information below) a tarball that contains all relevant code, and a shell script named <em>install.sh</em>, to be used as follows. You may also send instead a URL for the tarball file. Please include a SHA256 checksum and/or detached signature of the submission files.
 
-<ol>
-  <li> the tarball (tar.gz, bz2, xz, zip) will be expanded after the signature/checksum is checked;</li>
+    <ol>
+      <li> the tarball (tar.gz, bz2, xz, zip) will be expanded after the signature/checksum is checked;</li>
 
-  <li> <em>install.sh</em> is run; this should install all dependencies needed by your controller including building any source code, and should be tested on Ubuntu 14.04. Please include a README with comments in case this step fails. Please also include in the README a reference to the commit of the fmrbenchmark repository at which your code has been tested.</li>
-</ol>
-</p>
+      <li> <em>install.sh</em> is run; this should install all dependencies needed by your controller including building any source code, and should be tested on Ubuntu 14.04. Please include a README with comments in case this step fails. Please also include in the README a reference to the commit of the fmrbenchmark repository at which your code has been tested.</li>
+    </ol>
+    </p>
 
-<p>
-  The details of how trials will be run are available in the Users' Guide tutorials and the normative document.
-</p>
+    <p>
+      The details of how trials will be run are available in the Users' Guide tutorials and the normative document.
+    </p>
+  </div>
 
-<h2 id="contact">organizers</h2>
-<div class="author"><a href="http://scottman.net">Scott C. Livingston</a>  &lt;slivingston@A&gt;, where A&nbsp;=&nbsp;<a href="http://www.cds.caltech.edu">cds</a>.<a href="http://www.caltech.edu">caltech</a>.edu</div>
-<div class="author"><a href="http://vraman.github.io">Vasumathi Raman</a>  &lt;vasumathi.raman@B&gt;, where B&nbsp;=&nbsp;gmail.com</div>
+  <div class="row" id="contact">
+    <h2>organizers</h2>
+    <div class="author"><a href="http://scottman.net">Scott C. Livingston</a>  &lt;slivingston@A&gt;, where A&nbsp;=&nbsp;<a href="http://www.cds.caltech.edu">cds</a>.<a href="http://www.caltech.edu">caltech</a>.edu</div>
+    <div class="author"><a href="http://vraman.github.io">Vasumathi Raman</a>  &lt;vasumathi.raman@B&gt;, where B&nbsp;=&nbsp;gmail.com</div>
+  </div>
+</div>

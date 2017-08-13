@@ -4,101 +4,128 @@ skip_header: true
 use_mathjax: false
 ---
 
-<h1>Workshop on Formal Methods For Robotics: <span class="subtitle">Benchmarks and Evaluation Metrics<span></h1>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+<div class="container-fluid">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="https://fmrchallenge.org" class="button">Benchmarks on FMR</a>
+  </div>
+  <div id="navbar" class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+      <li><a href="#workshopagenda" class="button">agenda</a></li>
+      <li><a href="http://fmrchallenge.org" class="button">Challenge</a></li>
+      <li><a href="#contact" class="button">contact</a></li>
+      <li><a href="http://eepurl.com/bbxEcz" class="button">mailing list</a></li>
+    </ul>
+  </div>
+</div>
+</nav>
 
-<div id="toc">
-<a href="#workshopagenda" class="button">agenda</a>
-<a href="http://fmrchallenge.org" class="button">Challenge</a>
-<a href="#contact" class="button">contact</a>
-<a href="http://eepurl.com/bbxEcz" class="button">mailing list</a>
+<div class="jumbotron">
+  <div class="container">
+  <h1>Workshop on Formal Methods For Robotics: <span class="subtitle">Benchmarks and Evaluation Metrics<span></h1>
+  </div>
 </div>
 
-<h2>statement of purpose</h2>
-<p>
-The term "formal methods" refers broadly to techniques for the verification and
-automatic synthesis of systems that satisfy desirable properties exactly or
-within some statistical tolerance.  Historically developed for concurrent
-software, recent work has brought these methods to bear on motion planning in
-robotics. Challenges specific to robotics, such as uncertainty and real-time
-constraints, have motivated extensions and entirely novel treatments which draw
-on ideas from automata theory, logic, model checking, hybrid systems and
-control.  However, compared to other areas of robotics research, demonstrations
-of formal methods have been surprisingly small-scale. In addition, there is a
-lack of benchmarks and metrics for evaluating novel algorithms.
-</p>
-<p>
-This half-day workshop will bring together leading researchers in robotics,
-formal methods and hybrid systems, including those from industry. The
-discussions will be focused on metrics for evaluating the state of the art of
-formal methods for synthesis and verification of robotic systems, including the
-construction of appropriate benchmarks. This workshop will build on the success
-of its predecessors
-at <a href="http://verifiablerobotics.com/ICRA09/index.html"><acronym title="International
-Conference on Robotics and Automation">ICRA</acronym> 2009</a>,
-<a href="http://verifiablerobotics.com/ICRA10/index.html">2010</a>,
-<a href="http://verifiablerobotics.com/CAV11/index.html"><acronym title="Computer-Aided
-Verification">CAV</acronym> 2011</a>,
-and <a href="http://verifiablerobotics.com/RSS13/index.html"><acronym title="Robotics:
-Science and Systems">RSS</acronym>
-2013</a>, <a href="http://verifiablerobotics.com/RSS14/index.html">2014</a>.
-These previous events have tended toward broad inclusion of relevant work,
-motivated in part by the nascency of the field.  We propose to focus this
-manifestation of the series
-at <a href="http://www.icra2015.org/"><acronym title="International Conference
-on Robotics and Automation">ICRA</acronym> 2015</a> on benchmarks and metrics
-for evaluation. It will also provide a venue for discussing preparations and
-results from <a href="http://fmrchallenge.org">the First Challenge on Formal
-Methods for Robotics</a>.
-</p>
+<div class="container">
+  <div class="row">
+    <h2>statement of purpose</h2>
+    <p>
+    The term "formal methods" refers broadly to techniques for the verification and
+    automatic synthesis of systems that satisfy desirable properties exactly or
+    within some statistical tolerance.  Historically developed for concurrent
+    software, recent work has brought these methods to bear on motion planning in
+    robotics. Challenges specific to robotics, such as uncertainty and real-time
+    constraints, have motivated extensions and entirely novel treatments which draw
+    on ideas from automata theory, logic, model checking, hybrid systems and
+    control.  However, compared to other areas of robotics research, demonstrations
+    of formal methods have been surprisingly small-scale. In addition, there is a
+    lack of benchmarks and metrics for evaluating novel algorithms.
+    </p>
+    <p>
+    This half-day workshop will bring together leading researchers in robotics,
+    formal methods and hybrid systems, including those from industry. The
+    discussions will be focused on metrics for evaluating the state of the art of
+    formal methods for synthesis and verification of robotic systems, including the
+    construction of appropriate benchmarks. This workshop will build on the success
+    of its predecessors
+    at <a href="http://verifiablerobotics.com/ICRA09/index.html"><acronym title="International
+    Conference on Robotics and Automation">ICRA</acronym> 2009</a>,
+    <a href="http://verifiablerobotics.com/ICRA10/index.html">2010</a>,
+    <a href="http://verifiablerobotics.com/CAV11/index.html"><acronym title="Computer-Aided
+    Verification">CAV</acronym> 2011</a>,
+    and <a href="http://verifiablerobotics.com/RSS13/index.html"><acronym title="Robotics:
+    Science and Systems">RSS</acronym>
+    2013</a>, <a href="http://verifiablerobotics.com/RSS14/index.html">2014</a>.
+    These previous events have tended toward broad inclusion of relevant work,
+    motivated in part by the nascency of the field.  We propose to focus this
+    manifestation of the series
+    at <a href="http://www.icra2015.org/"><acronym title="International Conference
+    on Robotics and Automation">ICRA</acronym> 2015</a> on benchmarks and metrics
+    for evaluation. It will also provide a venue for discussing preparations and
+    results from <a href="http://fmrchallenge.org">the First Challenge on Formal
+    Methods for Robotics</a>.
+    </p>
+  </div>
 
-<h2 id="workshopagenda">tentative agenda</h2>
-<p>
-The workshop will take place during the morning of Saturday, 30 May 2015.
-<em>Please beware that this agenda may change</em> as we finalize workshop
-details. You may also want to consult
-the <a href="http://www.icra2015.org/conference/workshop-and-tutorial-schedule">official
-schedule of workshops at ICRA 2015</a>.
-</p>
-<p>
-<table class="agenda">
-<tr>
-  <td>08:30-9:15</td>
-  <td><em>Invited talk by </em><a href="https://galois.com/team/peter-trautman/">Peter Trautman (Galois, Inc.)</a>: <q>Formal methods at Galois Inc: current results, ongoing work, and future challenges</q></td>
-</tr><tr>
-  <td>09:15-10:00</td>
-  <td><em>Invited talk by </em><a href="http://klavinslab.org/">Eric Klavins</a> (<a href="http://www.washington.edu/">U. Washington</a>): <q>Reproducible experimental workflows though protocol programming languages</q></td>
-</tr><tr>
-  <td>10:00-10:30</td>
-  <td>coffee</td>
-</tr><tr>
-  <td>10:30-11:00</td>
-  <td>panel discussion</td>
-</tr><tr>
-  <td>11:00-11:16</td>
-  <td>lightning talks</td>
-</tr><tr>
-  <td>11:16-11:20</td>
-  <td>voting and organizing into SIGs</td>
-</tr><tr>
-  <td>11:20-11:45</td>
-  <td>SIGs (a.k.a., "special interest groups" or "birds of a feather")</td>
-</tr><tr>
-  <td>11:45-12:00</td>
-  <td>summaries about ideas and plans from SIGs
-</td>
-</tr>
-</table>
-</p>
+  <div class="row" id="workshopagenda">
+    <h2>tentative agenda</h2>
+    <p>
+    The workshop will take place during the morning of Saturday, 30 May 2015.
+    <em>Please beware that this agenda may change</em> as we finalize workshop
+    details. You may also want to consult
+    the <a href="http://www.icra2015.org/conference/workshop-and-tutorial-schedule">official
+    schedule of workshops at ICRA 2015</a>.
+    </p>
+    <p>
+    <table class="agenda">
+    <tr>
+      <td>08:30-9:15</td>
+      <td><em>Invited talk by </em><a href="https://galois.com/team/peter-trautman/">Peter Trautman (Galois, Inc.)</a>: <q>Formal methods at Galois Inc: current results, ongoing work, and future challenges</q></td>
+    </tr><tr>
+      <td>09:15-10:00</td>
+      <td><em>Invited talk by </em><a href="http://klavinslab.org/">Eric Klavins</a> (<a href="http://www.washington.edu/">U. Washington</a>): <q>Reproducible experimental workflows though protocol programming languages</q></td>
+    </tr><tr>
+      <td>10:00-10:30</td>
+      <td>coffee</td>
+    </tr><tr>
+      <td>10:30-11:00</td>
+      <td>panel discussion</td>
+    </tr><tr>
+      <td>11:00-11:16</td>
+      <td>lightning talks</td>
+    </tr><tr>
+      <td>11:16-11:20</td>
+      <td>voting and organizing into SIGs</td>
+    </tr><tr>
+      <td>11:20-11:45</td>
+      <td>SIGs (a.k.a., "special interest groups" or "birds of a feather")</td>
+    </tr><tr>
+      <td>11:45-12:00</td>
+      <td>summaries about ideas and plans from SIGs
+    </td>
+    </tr>
+    </table>
+    </p>
 
-<h3>details</h3>
-<ul>
-<li class="agenda">abstract for the first invited talk, <q>Formal methods at Galois Inc: current results, ongoing work, and future challenges</q> by <a href="https://galois.com/team/peter-trautman/">Peter Trautman (Galois, Inc.)</a>:
-<blockquote class="agenda">Galois Inc. is a small software company that applies formal methods to computer science problems to build trustworthy systems.  Historically, Galois has focused on “low-level” issues, such as cryptography, security, and software correctness.  However, with the growing prevalence of automation in everyday systems, the need for “low-level” trustworthy systems has become imperative across a broad range of applications.  In particular, Galois’ work on the DARPA program called High Assurance Cyber Military Systems (HACMS) resulted in the <a href="http://galois.com/blog/2015/02/60-minutes-galois/">“world’s most secure UAV software”</a>; additionally, common security vulnerabilities in modern automobiles and small UAVs were diagnosed and rectified using formal methods during this effort.  Recently, Galois’ interest in formally verified robotics algorithms has grown, and we are currently exploring vulnerabilities in the ROS navigation stack, as well as high assurance human in the loop architectures.   In general, an interesting research topic is simultaneously emerging from our software and robotics research teams: how does one apply formal methods to interacting probabilistic modules?</blockquote></li>
+    <h3>details</h3>
+    <ul>
+    <li class="agenda">abstract for the first invited talk, <q>Formal methods at Galois Inc: current results, ongoing work, and future challenges</q> by <a href="https://galois.com/team/peter-trautman/">Peter Trautman (Galois, Inc.)</a>:
+    <blockquote class="agenda">Galois Inc. is a small software company that applies formal methods to computer science problems to build trustworthy systems.  Historically, Galois has focused on “low-level” issues, such as cryptography, security, and software correctness.  However, with the growing prevalence of automation in everyday systems, the need for “low-level” trustworthy systems has become imperative across a broad range of applications.  In particular, Galois’ work on the DARPA program called High Assurance Cyber Military Systems (HACMS) resulted in the <a href="http://galois.com/blog/2015/02/60-minutes-galois/">“world’s most secure UAV software”</a>; additionally, common security vulnerabilities in modern automobiles and small UAVs were diagnosed and rectified using formal methods during this effort.  Recently, Galois’ interest in formally verified robotics algorithms has grown, and we are currently exploring vulnerabilities in the ROS navigation stack, as well as high assurance human in the loop architectures.   In general, an interesting research topic is simultaneously emerging from our software and robotics research teams: how does one apply formal methods to interacting probabilistic modules?</blockquote></li>
 
-<li class="agenda">abstract for the second invited talk, <q>Reproducible experimental workflows though protocol programming languages</q> by <a href="http://klavinslab.org/">Eric Klavins</a> (<a href="http://www.washington.edu/">U. Washington</a>):
-<blockquote class="agenda">I will describe several recent efforts to standardize how protocols and workflows are specified using formal, executable programming languages. Writing protocols in these languages could lead to a revolution in how experimental work is done. I will then describe briefly my lab’s experience with Aquarium, our human-in-the-loop laboratory operating system that you can use to run experimental workflow programs reliably and reproducibly.</blockquote></li>
-</ul>
+    <li class="agenda">abstract for the second invited talk, <q>Reproducible experimental workflows though protocol programming languages</q> by <a href="http://klavinslab.org/">Eric Klavins</a> (<a href="http://www.washington.edu/">U. Washington</a>):
+    <blockquote class="agenda">I will describe several recent efforts to standardize how protocols and workflows are specified using formal, executable programming languages. Writing protocols in these languages could lead to a revolution in how experimental work is done. I will then describe briefly my lab’s experience with Aquarium, our human-in-the-loop laboratory operating system that you can use to run experimental workflow programs reliably and reproducibly.</blockquote></li>
+    </ul>
+  </div>
 
-<h2 id="contact">organizers</h2>
-<div class="author"><a href="http://scottman.net">Scott C. Livingston</a>  &lt;slivingston@<a href="http://www.cds.caltech.edu">cds</a> <a href="http://www.caltech.edu">caltech</a> edu&gt;</div>
-<div class="author"><a href="http://users.cms.caltech.edu/~vasu/">Vasumathi Raman</a>  &lt;vasu@<a href="http://www.caltech.edu">caltech</a> edu&gt;</div>
+  <div class="row" id="contact">
+    <h2>organizers</h2>
+    <div class="author"><a href="http://scottman.net">Scott C. Livingston</a>  &lt;slivingston@<a href="http://www.cds.caltech.edu">cds</a> <a href="http://www.caltech.edu">caltech</a> edu&gt;</div>
+    <div class="author"><a href="http://users.cms.caltech.edu/~vasu/">Vasumathi Raman</a>  &lt;vasu@<a href="http://www.caltech.edu">caltech</a> edu&gt;</div>
+  </div>
+</div>
