@@ -16,3 +16,8 @@ body {
   width: 100%;
   background-color: #f5f5f5;
 }
+
+.pdomain-cell {
+  background-color: #f5f5f5;
+  border: 1px solid #bbb;
+}
