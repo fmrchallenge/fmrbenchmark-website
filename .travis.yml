@@ -5,6 +5,12 @@ os:
 
 language: ruby
 
+addons:
+  sauce_connect:
+    username: slivingston
+  jwt:
+    secure: rX9MAd5tSrEKf75zbECIzhDxeAavf4HGzcndU80niBqWJAaGqm2iHwriNNZU4XTuni9PreTsTV4pJoTM/1Sv7Os3kG+2GRK2l44/KfBgLlbAeFn25M3ZBEsEP3WveAQp3cQJ94pEiuEasW6Sb6dRbRjyYVtmch6Yraii813kxuA=
+
 install:
   - bundle install
 
