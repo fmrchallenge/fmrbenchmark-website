@@ -18,4 +18,8 @@ script:
   - bundle exec middleman build
 
 notifications:
-  email: false
+  email:
+    recipients:
+      - scott@rerobots.net
+    on_success: change
+    on_failure: always
