@@ -1,0 +1,7 @@
+celery
+gunicorn
+psycopg2
+python-memcached
+Django
+paramiko
+requests

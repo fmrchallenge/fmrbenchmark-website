@@ -1,18 +1,16 @@
-sudo: false
+language: python
+python:
+  - "3.7"
 
-os:
-  - linux
-
-language: ruby
-
-addons:
-  sauce_connect: true
+before_install:
+  - pip install pylint pylint-django
 
 install:
-  - bundle install
+  - pip install -r requirements.txt
 
 script:
-  - bundle exec middleman build
+  - pylint --load-plugins pylint_django -E fmrweb
+  - python3 -Wall manage.py test -v 2 --failfast
 
 notifications:
   email:

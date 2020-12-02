@@ -1,15 +1,15 @@
-# Ignore bundler config
-/.bundle
-
 # Ignore the build directory
 /build
 
 # Ignore cache
 /.sass-cache
 /.cache
-/vendor
 
 # Other temporary files
 .DS_Store
 *~
-Gemfile.lock
+*.pyc
+memcached.out
+rabbitmq.out
+db.sqlite3
+/etc/django-secret.key
