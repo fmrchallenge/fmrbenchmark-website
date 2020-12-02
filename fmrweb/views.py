@@ -8,6 +8,10 @@ def faq(request):
     return render(request, 'fmrweb/faq.html')
 
 
+def norm_index(request):
+    return render(request, 'fmrweb/norm-index.html')
+
+
 def about_integrator_chains(request):
     return render(request, 'fmrweb/integrator_chains.html')
 

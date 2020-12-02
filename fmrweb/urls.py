@@ -11,6 +11,8 @@ urlpatterns = [
     path(r'index.html', views.index, name='index-legacy'),
     path(r'faq', views.faq, name='faq'),
     path(r'faq.html', views.faq, name='faq-legacy'),
+    path(r'norm', views.norm_index, name='norm-index'),
+    path(r'norm/index.html', views.norm_index, name='norm-index-legacy'),
 
     path(r'integrator_chains', views.about_integrator_chains, name='about-integrator_chains'),
     path(r'integrator_chains.html', views.about_integrator_chains, name='about-integrator_chains-legacy'),

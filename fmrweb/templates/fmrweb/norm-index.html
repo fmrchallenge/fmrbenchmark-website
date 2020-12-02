@@ -1,12 +1,15 @@
----
-title: definitions and rules
-use_mathjax: true
----
+{% extends "fmrweb/base.html" %}{% load static %}
+{% block title %}definitions and rules{% endblock %}
+{% block header %}
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "AMS" } } });</script>
+{% endblock %}
+{% block main %}
 
 <div class="container">
 <h1>Problem domain descriptions and competition rules</h1>
 <p>
-The basic terminology, <a href="/index.html#problems">problem domains</a>, and
+The basic terminology, <a href="{% url 'index' %}#problems">problem domains</a>, and
 methods of evaluation are defined normatively in the Challenge Document.
 
 The sources are available under <a href="https://github.com/fmrchallenge/fmrbenchmark/tree/master/doc/norm"><tt>doc/norm/</tt></a> in the <a href="https://github.com/fmrchallenge/fmrbenchmark">fmrbenchmark repository</a>.
@@ -16,7 +19,7 @@ the <a href="http://docs.fmrchallenge.org">User's Guide</a> and
 the <a href="http://api.fmrchallenge.org">API manual</a>.
 </p>
 <p>
-<a href="releases/fmrchallenge-v0.0.4.pdf" class="importantlink">Get the current release</a>, which corresponds to <a href="https://github.com/fmrchallenge/fmrbenchmark/releases/tag/v0.0.4">version 0.0.4</a> of the <a href="https://github.com/fmrchallenge/fmrbenchmark">fmrbenchmark repository</a>.
+<a href="{% static 'fmrweb/norm/releases/fmrchallenge-v0.0.4.pdf' %}" class="importantlink">Get the current release</a>, which corresponds to <a href="https://github.com/fmrchallenge/fmrbenchmark/releases/tag/v0.0.4">version 0.0.4</a> of the <a href="https://github.com/fmrchallenge/fmrbenchmark">fmrbenchmark repository</a>.
 </p>
 
 <h2>terminology</h2>
@@ -60,3 +63,4 @@ that team.
 (none yet)
 </p>
 </div>
+{% endblock %}
