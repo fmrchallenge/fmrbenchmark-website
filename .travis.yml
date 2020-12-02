@@ -3,6 +3,7 @@ python:
   - "3.7"
 
 before_install:
+  - head -c 32 /dev/random | base64 > etc/django-secret.key
   - pip install pylint pylint-django
 
 install:
