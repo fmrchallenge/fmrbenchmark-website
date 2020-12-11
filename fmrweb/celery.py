@@ -7,7 +7,13 @@ You may obtain a copy of the License at https://www.apache.org/licenses/LICENSE-
 """
 from __future__ import absolute_import
 
-from .celery import celery_app
+import os
+
+from celery import Celery
 
 
-__all__ = ['celery_app']
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'fmrweb.settings')
+
+celery_app = Celery('fmrweb')
+celery_app.config_from_object('django.conf:settings', namespace='CELERY')
+celery_app.autodiscover_tasks()

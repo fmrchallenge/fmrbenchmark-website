@@ -24,7 +24,7 @@
         <![endif]-->
 
 {% block nav %}
-	<nav class="navbar navbar-inverse navbar-static-top">
+<nav class="navbar navbar-inverse navbar-static-top">
 <div class="container-fluid">
   <div class="navbar-header">
     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -39,7 +39,9 @@
     <ul class="nav navbar-nav">
       <li><a href="{% url 'index' %}#problems" class="button">domains</a></li>
       <li><a href="http://docs.fmrchallenge.org" class="button">documentation</a></li>
+      <li><a href="{% url 'submit' %}" class="button">submit</a></li>
       <li><a href="{% url 'index' %}#events" class="button">events</a></li>
+      <li><a href="{% url 'index' %}#contact" class="button">contact</a></li>
       <li><a href="{% url 'faq' %}" class="button">FAQ</a></li>
     </ul>
   </div>
@@ -53,7 +55,7 @@
           <p>&copy;2016-2017 <a href="http://www.caltech.edu" class="caltechlink">Caltech</a> et al.
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons Attribution 4.0 International License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a>
           (<a href="https://github.com/fmrchallenge/fmrbenchmark-website/">This website is open source.</a>)
-          Generated at <%= String(Time.now) %></p>
+          </p>
         </div></footer>
 
         <script src="{% static 'fmrweb/extern/js/jquery-1.8.0.min.js' %}"></script>

@@ -1,0 +1,18 @@
+---
+
+- name: update hosts
+  tags: web
+  hosts: main
+  vars_files:
+    - config
+  gather_facts: true
+  become: yes
+  tasks:
+    - import_tasks: tasks/stop_web.yml
+    - import_tasks: tasks/put_files.yml
+    - name: migrate database
+      shell: HOME=/home/fpuser sudo -E -u fpuser bash -c 'source PY/bin/activate && ./manage.py migrate'
+      args:
+        chdir: /home/fpuser
+        executable: /bin/bash
+    - import_tasks: tasks/start.yml

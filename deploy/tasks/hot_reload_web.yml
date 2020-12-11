@@ -1,0 +1,10 @@
+- name: send Gunicorn reload request
+  become: yes
+  shell: pkill -SIGHUP gunicorn
+
+- name: reload nginx configuration
+  become: yes
+  service:
+    name: nginx
+    enabled: false
+    state: reloaded

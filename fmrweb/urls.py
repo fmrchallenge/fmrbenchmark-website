@@ -9,6 +9,7 @@ app_name = 'fmrweb'
 urlpatterns = [
     path(r'', views.index, name='index'),
     path(r'index.html', views.index, name='index-legacy'),
+    path(r'submit', views.submit, name='submit'),
     path(r'faq', views.faq, name='faq'),
     path(r'faq.html', views.faq, name='faq-legacy'),
     path(r'norm', views.norm_index, name='norm-index'),

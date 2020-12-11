@@ -5,29 +5,21 @@
 <script type="text/x-mathjax-config">MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "AMS" } } });</script>
 {% endblock %}
 {% block main %}
-<div class="jumbotron">
-  <div class="container">
+<div class="container">
   <h1>Benchmarks and Competitions on Formal Methods for Robotics</h1>
-  </div>
 </div>
 
 <div class="container">
-  <div class="row" id="contact">
-    <h2>Contact</h2>
-    <div class="author"><a href="http://scottman.net">Scott C. Livingston</a>  &lt;slivingston@A&gt;, where A&nbsp;=&nbsp;<a href="http://www.cds.caltech.edu">cds</a>.<a href="http://www.caltech.edu">caltech</a>.edu</div>
-    <div class="author"><a href="http://vraman.github.io">Vasumathi Raman</a>  &lt;vasumathi.raman@B&gt;, where B&nbsp;=&nbsp;gmail.com</div>
-    <div id="news">
-      <a href="https://groups.google.com/forum/#!forum/fmrbenchmark-users">subscribe to the mailing list</a>,
-      or follow <a href="https://twitter.com/fmrchallenge">@fmrchallenge on Twitter</a>
-    </div>
-  </div>
-  <div class="row" id="events">
-    <h2>Events</h2>
-    <p><ul>
-      <li><a href="{% url 'events-icra2016' %}" class="importantlink">challenge at ICRA 2016</a></li>
-      <li><a href="{% url 'events-icra2015' %}">workshop at ICRA 2015</a></li>
-    </ul></p>
-  </div>
+<div class="row" id="summary">
+<h2>Summary</h2>
+<p>
+
+This is a project to develop benchmark problems for research in so-called formal
+methods for robotics. The repositories are hosted on GitHub at <a href="https://github.com/fmrchallenge">https://github.com/fmrchallenge</a>.
+
+</p>
+</div>
+
   <div class="row">
     <h2 id="problems">Problem Domains</h2>
     <p>Below is a summary of <em>problem domains</em>, each of which is the basis
@@ -76,7 +68,7 @@ that must be eventually reached by the controller.
 
 <div class="col-md-4 pdomain-cell" id="cart_clearing">
 <h3>factory cart clearing</h3>
-<img width="90%" src="{% static 'fmrweb/img/pandp_illustration.png' %}" alt="Illustration of a Baxter robot next to an empty table.  The arms are hanging downward and not in motion." />
+<img width="90%" src="{% static 'fmrweb/img/pandp_illustration.jpg' %}" alt="Illustration of a Baxter robot next to an empty table.  The arms are hanging downward and not in motion." />
 <p>
 The <em>factory cart clearing</em> domain concerns dexterous manipulation tasks
 motivated by assembly line activities.  The robot is required to process objects
@@ -87,5 +79,23 @@ processed correctly (described below) in a fixed amount of time.
 </p>
 </div>
 </div>
+
+  <div class="row" id="contact">
+    <h2>Contact</h2>
+    <div class="author"><a href="http://scottman.net">Scott C. Livingston</a>  &lt;slivingston@A&gt;, where A&nbsp;=&nbsp;<a href="http://www.cds.caltech.edu">cds</a>.<a href="http://www.caltech.edu">caltech</a>.edu</div>
+    <div class="author"><a href="http://vraman.github.io">Vasumathi Raman</a>  &lt;vasumathi.raman@B&gt;, where B&nbsp;=&nbsp;gmail.com</div>
+    <div id="news">
+      <a href="https://groups.google.com/forum/#!forum/fmrbenchmark-users">subscribe to the mailing list</a>,
+      or follow <a href="https://twitter.com/fmrchallenge">@fmrchallenge on Twitter</a>
+    </div>
+  </div>
+  <div class="row" id="events">
+    <h2>Events</h2>
+    <p><ul>
+      <li><a href="{% url 'events-icra2016' %}" class="importantlink">challenge at ICRA 2016</a></li>
+      <li><a href="{% url 'events-icra2015' %}">workshop at ICRA 2015</a></li>
+    </ul></p>
+  </div>
+
 </div>
 {% endblock %}

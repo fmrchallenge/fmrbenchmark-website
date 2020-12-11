@@ -1,3 +1,10 @@
+# Ignore production keys, tokens, etc.
+/etc/django-secret.key
+/deploy/production
+/deploy/host_vars
+/deploy/config
+/deploy/pki/
+
 # Ignore the build directory
 /build
 
@@ -12,4 +19,4 @@
 memcached.out
 rabbitmq.out
 db.sqlite3
-/etc/django-secret.key
+/static_to_deploy/

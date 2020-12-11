@@ -1,0 +1,7 @@
+- name: starting
+  command: sudo -u fpuser supervisord -c /home/fpuser/supervisord.conf
+
+- service:
+    name: nginx
+    enabled: false
+    state: started

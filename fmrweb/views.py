@@ -21,3 +21,7 @@ def event_icra2016(request):
 
 def event_icra2015(request):
     return render(request, 'fmrweb/events/workshop-icra2015.html')
+
+
+def submit(request):
+    return render(request, 'fmrweb/submit.html')

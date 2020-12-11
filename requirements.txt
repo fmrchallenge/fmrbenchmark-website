@@ -1,4 +1,5 @@
 celery
+django-celery-results
 gunicorn
 psycopg2
 python-memcached

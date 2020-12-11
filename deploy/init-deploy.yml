@@ -1,0 +1,203 @@
+---
+
+- name: bootstrap main host
+  tags: web
+  become: yes
+  vars_files:
+    - config
+  hosts: main
+  tasks:
+    - iptables:
+        chain: INPUT
+        in_interface: lo
+        jump: ACCEPT
+
+    - iptables:
+        chain: OUTPUT
+        out_interface: lo
+        jump: ACCEPT
+
+    - iptables:
+        chain: INPUT
+        ctstate: ESTABLISHED,RELATED
+        jump: ACCEPT
+
+    - iptables:
+        chain: INPUT
+        protocol: tcp
+        destination_port: 22
+        ctstate: NEW
+        jump: ACCEPT
+        source: "{{ item }}"
+      loop: "{{ allow_list }}"
+
+    - iptables:
+        chain: OUTPUT
+        ctstate: ESTABLISHED
+        jump: ACCEPT
+
+    - iptables:
+        chain: INPUT
+        policy: DROP
+
+    - apt:
+        name: "{{ packages }}"
+      vars:
+        packages:
+        - build-essential
+        - cmake
+        - pkg-config
+        - git
+        - python3-virtualenv
+        - supervisor
+        - nginx
+        - libpython3-dev
+        - libpq-dev
+        - rabbitmq-server
+        - memcached
+
+    - service:
+        name: nginx
+        enabled: false
+        state: stopped
+
+    - service:
+        name: supervisor
+        enabled: false
+        state: stopped
+
+    - service:
+        name: memcached
+        enabled: true
+        state: started
+
+    - name: configure rabbitmq server
+      copy:
+        content: |
+          NODE_IP_ADDRESS=127.0.0.1
+          NODE_PORT=5672
+        dest: /etc/rabbitmq/rabbitmq-env.conf
+        owner: root
+        group: root
+        force: no
+
+    - service:
+        name: rabbitmq-server
+        enabled: true
+        state: restarted
+
+    - name: create fpuser user
+      user:
+        name: fpuser
+        create_home: true
+        home: /home/fpuser
+        shell: /bin/bash
+        generate_ssh_key: true
+        password: "!"
+      register: create_fpuser_user
+
+    - file:
+        state: directory
+        path: /etc/letsencrypt/live/fmrchallenge.org
+        owner: root
+        group: root
+        mode: 0700
+
+    - name: use snakeoil certs as placeholder (also, useful for testing)
+      copy:
+        src: "../etc/snakeoil.pem"
+        dest: /etc/letsencrypt/live/fmrchallenge.org/fullchain.pem
+        owner: root
+        group: root
+        mode: 0644
+
+    - name: use snakeoil certs as placeholder (also, useful for testing)
+      copy:
+        src: "../etc/snakeoil.key"
+        dest: /etc/letsencrypt/live/fmrchallenge.org/privkey.pem
+        owner: root
+        group: root
+        mode: 0644
+
+    - name: use snakeoil certs as placeholder (also, useful for testing)
+      copy:
+        src: "../etc/snakeoil.pem"
+        dest: /home/fpuser/fullchain.pem
+        owner: fpuser
+        group: fpuser
+        mode: 0600
+
+    - name: use snakeoil certs as placeholder (also, useful for testing)
+      copy:
+        src: "../etc/snakeoil.key"
+        dest: /home/fpuser/privkey.pem
+        owner: fpuser
+        group: fpuser
+        mode: 0600
+
+    - name: create Python virtualenv for fpuser
+      command: sudo -u fpuser python3 -m virtualenv -p python3 PY
+      args:
+        chdir: /home/fpuser
+        creates: /home/fpuser/PY
+
+    - name: install Python package dependencies
+      shell: HOME=/home/fpuser sudo -E -u fpuser bash -c 'source PY/bin/activate && pip install -U pip && pip install celery gunicorn psycopg2 python-memcached Django paramiko requests'
+      args:
+        chdir: /home/fpuser
+        executable: /bin/bash
+
+    - name: configure ssh for strict host key checking
+      lineinfile:
+        path: /home/fpuser/.ssh/config
+        state: present
+        create: true
+        line: "StrictHostKeyChecking yes"
+        owner: fpuser
+        group: fpuser
+
+    - name: put keys in place
+      copy:
+        src: "{{ item }}"
+        dest: /home/fpuser/etc/
+        owner: fpuser
+        group: fpuser
+        mode: 0600
+      loop:
+        - "../etc/django-secret.key"
+
+
+- name: prepare database
+  hosts: main
+  tags: db
+  become: yes
+  vars_files:
+    - config
+  tasks:
+    - apt:
+        name: "{{ packages }}"
+      vars:
+        packages:
+        - postgresql
+        - python3-psycopg2
+
+    - name: postgres host-based authentication file (configuration)
+      copy:
+        content: |
+          local all postgres peer
+          host fmrbdb fpuser 127.0.0.1/32 trust
+        dest: /etc/postgresql/12/main/pg_hba.conf
+        owner: root
+        group: root
+        mode: 0644
+
+    - service:
+        name: postgresql
+        enabled: true
+        state: restarted
+
+    - name: create fpuser database role
+      command: sudo -u postgres sh -c 'echo "\du" | psql | grep -q fpuser || echo "CREATE ROLE fpuser LOGIN;" | psql'
+
+    - name: create fmrbdb database
+      command: sudo -u postgres sh -c 'echo "\l" | psql | grep -q fmrbdb || createdb -O fpuser fmrbdb'

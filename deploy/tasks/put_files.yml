@@ -1,0 +1,45 @@
+- name: copy static files
+  become: no
+  synchronize:
+    src: "../static_to_deploy"
+    dest: /home/scott/
+    delete: true
+
+- command: rsync -a /home/scott/static_to_deploy/ /var/www/html/static
+  become: yes
+
+- name: copy files
+  become: no
+  synchronize:
+    src: "../build"
+    dest: /home/scott/
+    delete: true
+
+- command: rsync -a /home/scott/build/ /home/fpuser/
+  become: yes
+
+- become: yes
+  file:
+    path: /home/fpuser
+    recurse: true
+    owner: fpuser
+    group: fpuser
+
+- name: copy nginx configuration
+  become: yes
+  copy:
+    src: "../build/main_etc/nginx.conf"
+    dest: /etc/nginx/
+    owner: root
+    group: root
+    mode: 0600
+
+- name: ensure modes of executables
+  become: yes
+  ignore_errors: true
+  file:
+    state: file
+    path: "/home/fpuser/{{ item }}"
+    mode: 0700
+  loop:
+    - manage.py
