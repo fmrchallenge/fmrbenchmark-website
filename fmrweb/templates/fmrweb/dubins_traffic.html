@@ -1,0 +1,90 @@
+{% extends "fmrweb/base.html" %}{% load static %}
+{% block title %}traffic network of Dubins cars -- benchmark problem domain{% endblock %}
+{% block header %}
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "AMS" } } });</script>
+{% endblock %}
+{% block main %}
+<div class="container">
+<h1 class="pdomain">traffic network of Dubins cars</h1>
+
+<!-- LaTeX header -->
+\( \DeclareMathOperator{\Feventually}{\Diamond} \DeclareMathOperator{\Galways}{\Box} \DeclareMathOperator{\Uuntil}{\mathbf{U}} \)
+
+<div class="pillustration"><img src="{% static 'fmrweb/img/dtraff_illustration.jpg' %}" height="350px" alt="Illustration of 6 Kobuki mobile bases moving around a 4-connected grid of road segments. The width is 3 road segments, and the height is 2 road segments. Each has two lanes, where there is one lane for each direction of traffic."/><img src="{% static 'fmrweb/img/photograph_of_multi_kobuki.jpg' %}" height="350px" alt="Illustration of 6 Kobuki mobile bases moving around a 4-connected grid of road segments. The width is 3 road segments, and the height is 2 road segments. Each has two lanes, where there is one lane for each direction of traffic."/></div>
+<h2 class="pdomain">Summary</h2>
+<p>
+The <em>traffic network of Dubins cars</em> domain involves navigation in a small network of
+two-lane roads with vehicles that have Dubins car dynamics.  There is an
+adversary that selects the motion of other cars.  The adversary is subject to
+assumptions such as obeying traffic rules and not parking unfairly at locations
+that must be eventually reached by the controller.
+</p>
+
+<h2 class="pdomain">Dynamics and constraints</h2>
+<p>
+All cars including the controlled robot are assumed to have the same rigid body
+shape and to have the same dynamics. Let \( \mathcal I \) be the index set for the
+cars in the network, with \( r \) denoting the index of the controlled robot; all
+cars indexed with \( i \in {\mathcal I}\backslash\{r\} \) are regarded as a part of
+the (adversarial) environment.
+
+The pose of each car \( i \in {\mathcal I} \) is specified by \( (x_i,y_i,\theta_i) \),
+where \( (x_i,y_i)\in \mathbb{R}^2 \) is referred to as <em>position</em>, and
+\( \theta_i \in S^1 \) is referred to as <em>orientation</em>.  The car's body is a
+rectangle or a circle, and the position is defined to be at the mean point
+(center of mass) of the body.  Let \( w \) be the width of the car -- this is
+identical for each \( i \in {\mathcal I} \).
+
+The trajectories of car \( i \) are solutions of
+\begin{align}
+\dot{x_i} &= u_i \cos \theta_i \\
+\dot{y_i} &= u_i \sin \theta_i \\
+\dot{\theta_i} &= \omega_i
+\end{align}
+where the control inputs are constrained as \( \lvert u_i(t) \rvert \leq u_{\mathrm{max}} \) and
+\( \lvert\omega_i(t)\rvert \leq \omega_{\mathrm{max}} \).
+
+
+The workspace is a randomly generated road network constructed as follows.
+Create a planar graph \( G = (V,E) \) in which each vertex \( v \) has degree \( d_v \le 4 \)
+(i.e., at most 4 neighbors).  Embed this graph in the plane, and expand the
+edges to have width \( 4w \) (recall \( w \) is the common vehicle width).
+
+For this aspect of the "traffic network of Dubins cars" problem domain, we are
+able to vary the bounds \( u_{\mathrm{max}} \) and \( \omega_{\mathrm{max}} \) on the
+permissible control inputs, the size (\( |V| \)) and topology (\( |E| \)) of the road
+network, and the number of other cars, i.e. \( |\mathcal I| \).
+</p>
+
+<h2 class="pdomain">Specifications</h2>
+<p>
+Because there is now an environment that may behave adversarially, task
+specifications are of the form \( \varphi_{\mathrm{env}} \Rightarrow
+\varphi_{\mathrm{sys}} \), where \( \varphi_{\mathrm{env}} \) is known as the
+"assumption" and \( \varphi_{\mathrm{sys}} \) as the "guarantee."  The desired
+behaviors to be realized by the robot are provided through
+\( \varphi_{\mathrm{sys}} \) and include
+<ol>
+<li> obstacle avoidance while repeatedly visiting regions of interest, as in
+\begin{equation}
+q(0) = \mathrm{init} \wedge \Galways \left( q(t) \notin \mathrm{Obs} \right) \wedge \bigwedge_{i} \Galways \Feventually \mathrm{goal}_i
+\end{equation}</li>
+
+<li> remaining in the right-lane except when it is blocked;</li>
+
+<li> stopping at intersections, which are treated as all-ways stops, and then
+  proceeding based on order of arrival.</li>
+</ol>
+The other cars are assumed to follow the same road rules as listed above.
+However, exceptions (violations) may occur, and thus additional fairness
+assumptions are provided. In particular,
+\begin{equation}\label{eq:freegoals}
+\bigwedge_i \Galways \Feventually \tt{free}(\mathrm{goal}_i)
+\end{equation}
+which provides that other cars always eventually vacate the \( i \)-th goal
+region. The position of the other cars is provided when in a predetermined
+radius, to simulate solving the associated vision problem.
+</p>
+</div>
+{% endblock %}

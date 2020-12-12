@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.decorators.http import require_safe, require_POST
 
 
 def index(request):
@@ -14,6 +15,9 @@ def norm_index(request):
 
 def about_integrator_chains(request):
     return render(request, 'fmrweb/integrator_chains.html')
+
+def about_dubins_traffic(request):
+    return render(request, 'fmrweb/dubins_traffic.html')
 
 
 def event_icra2016(request):
