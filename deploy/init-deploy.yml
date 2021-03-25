@@ -142,7 +142,7 @@
         creates: /home/fpuser/PY
 
     - name: install Python package dependencies
-      shell: HOME=/home/fpuser sudo -E -u fpuser bash -c 'source PY/bin/activate && pip install -U pip && pip install celery gunicorn psycopg2 python-memcached Django paramiko requests'
+      shell: HOME=/home/fpuser sudo -E -u fpuser bash -c 'source PY/bin/activate && pip install -U pip && pip install celery gunicorn psycopg2 python-memcached Django django-celery-results paramiko requests'
       args:
         chdir: /home/fpuser
         executable: /bin/bash
