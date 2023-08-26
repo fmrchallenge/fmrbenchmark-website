@@ -19,10 +19,6 @@ The server-side is built using [Django](https://www.djangoproject.com/) and
 [HTML5 Boilerplate](http://html5boilerplate.com) templates. Deployment is
 achieved with [Ansible](https://docs.ansible.com/ansible/latest/index.html).
 
-We use Travis CI and [Sauce Labs](https://saucelabs.com/open-source) to build
-and test the site from the current source code in the repository.
-[![Build status](https://api.travis-ci.org/fmrchallenge/fmrbenchmark-website.svg?branch=master)](https://travis-ci.org/fmrchallenge/fmrbenchmark-website)
-
 
 Organization
 ------------
