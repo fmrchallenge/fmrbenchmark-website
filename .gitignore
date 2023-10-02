@@ -20,3 +20,9 @@ memcached.out
 rabbitmq.out
 db.sqlite3
 /static_to_deploy/
+
+# NextJS and Supabase related
+node_modules/
+next-env.d.ts
+/client/.next/
+.env.local
